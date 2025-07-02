@@ -1,38 +1,53 @@
+# Análise de Campanha com Cupom - iFood Case
 
-# Análise de Teste A/B com Cupons — Case Técnico iFood
+Este repositório contém a solução para o case técnico de Data Analyst do iFood, focado em analisar os efeitos de uma campanha promocional com cupons e propor melhorias baseadas em dados.
 
-Este projeto tem como objetivo analisar o impacto financeiro e comportamental de uma campanha promocional com cupons utilizando um teste A/B. 
+## Objetivo
+Avaliar a eficácia de uma campanha com cupons de desconto através de um experimento A/B, identificar segmentos com maior responsividade e retorno financeiro, e sugerir estratégias mais eficientes para a empresa.
 
-## Abordagem
+## Arquivos
+- `1_data_preparation.ipynb`: Pipeline de extração, tratamento e agregação dos dados.
+- `2_analysis.ipynb`: Análise do experimento A/B com teste de proporção e teste t.
+- `3_financial_viability`: Análise de viabilidade financeira.
+- `4_user_segmentation.ipynb`: Segmentação de usuários e avaliação estatística por grupo.
+- `Case iFood.pdf`: Versão em slides com os principais achados, testes e recomendações estratégicas.
 
-A campanha consistiu em oferecer cupons a um grupo de usuários (grupo **Target**), enquanto o grupo de controle (**Control**) não recebeu o benefício. Avaliamos o comportamento dos usuários, analisamos a significância estatística dos resultados e simulamos diferentes cenários de segmentação para encontrar a estratégia mais eficiente.
+## Instruções de Execução
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
+   ```
+
+2. **Crie um ambiente virtual (opcional)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   ```
+
+3. **Instale as dependências**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Execute os notebooks na ordem:**
+   - `1_data_preparation.ipynb`
+   - `2_analysis.ipynb`
+   - `3_financial_viability.ipynb`
+   - `4_user_segmentation.ipynb`
+
+5. **Visualize a apresentação final**
+   - O arquivo `Case iFood.pdf` contém a análise consolidada e visual.
+
+## Tecnologias Usadas
+
+- Python 3.x
+- Pandas, NumPy
+- SciPy, Statsmodels
+- Seaborn, Matplotlib
+- Jupyter Notebook
+- requests
 
 ---
 
-## Estrutura dos Notebooks
-
-1. **Notebook 1 — 1_data_preparation**
-   - Carregamento e tratamento das bases: `order`, `ab_test`, `consumer`, `restaurants`.
-   - Agregação dos dados de pedidos por usuário.
-   - Cálculo de métricas: número de pedidos, gasto total, ticket médio.
-   - Junção das bases e construção da base final.
-
-2. **Notebook 2 — 2_analysis**
-   - Comparação entre grupos (target vs control).
-   - Testes T para gasto total e número de pedidos.
-   - Teste Z para proporção de conversão.
-   - Cálculo de ROI e impacto financeiro da campanha.
-  
-3. **Notebook 3 — 3_financial_viability**
-   - Cálculo de ROI e impacto financeiro da campanha.
-  
-4. **Notebook 4 — 4_user_segmentation**
-   - Segmentação de usuários por:
-     - Atividade (ativo/inativo)
-     - Frequência (1 pedido/recorrente)
-     - Gasto total (baixo, médio, alto — usando quantis)
-   - Testes estatísticos por segmento.
-   - Avaliação do ROI e lucro por cenário.
-   - Simulação com diferentes valores de cupom (R$5, R$10, R$15).
-
----
